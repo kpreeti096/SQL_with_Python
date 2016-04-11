@@ -2181,45 +2181,5 @@ pd.read_sql(query,con)
 
 
 ```python
-query = '''CREATE TABLE celebs(
-            id INTEGER,
-            name TEXT,
-            age INTEGER
-            );'''
-pd.read_sql(query,con)
-```
-
-
-    ---------------------------------------------------------------------------
-
-    TypeError                                 Traceback (most recent call last)
-
-    <ipython-input-23-dc5f56bb8bd8> in <module>()
-          4             age INTEGER
-          5             );'''
-    ----> 6 pd.read_sql(query,con)
-    
-
-    C:\Users\masof\Anaconda3\lib\site-packages\pandas\io\sql.py in read_sql(sql, con, index_col, coerce_float, params, parse_dates, columns, chunksize)
-        497             sql, index_col=index_col, params=params,
-        498             coerce_float=coerce_float, parse_dates=parse_dates,
-    --> 499             chunksize=chunksize)
-        500 
-        501     try:
-    
-
-    C:\Users\masof\Anaconda3\lib\site-packages\pandas\io\sql.py in read_query(self, sql, index_col, coerce_float, params, parse_dates, chunksize)
-       1594         args = _convert_params(sql, params)
-       1595         cursor = self.execute(*args)
-    -> 1596         columns = [col_desc[0] for col_desc in cursor.description]
-       1597 
-       1598         if chunksize is not None:
-    
-
-    TypeError: 'NoneType' object is not iterable
-
-
-
-```python
 
 ```
